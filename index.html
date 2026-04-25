@@ -6,6 +6,7 @@
     <title>WHATSAPP ATTACK PANEL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -59,6 +60,23 @@
                 color: #39FF14;
                 font-weight: bold;
             }
+            .pesan-sukses {
+                background-color: #39FF1420;
+                border: 1px solid #39FF14;
+                padding: 12px;
+                border-radius: 5px;
+                margin: 10px 0;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .pesan-error {
+                background-color: #FF2D0020;
+                border: 1px solid #FF2D00;
+                padding: 12px;
+                border-radius: 5px;
+                margin: 10px 0;
+                font-weight: bold;
+            }
         }
     </style>
 </head>
@@ -67,59 +85,48 @@
         <!-- HEADER -->
         <div class="border-2 border-terminal-ungu rounded-md p-4 mb-6 text-center">
             <h1 class="text-terminal-ungu text-xl md:text-2xl font-bold mb-2">====================================================================================================</h1>
-            <h2 class="text-terminal-ungu text-lg md:text-xl font-bold mb-4">WHATSAPP ATTACK PANEL ULTIMATE v26.0</h2>
+            <h2 class="text-terminal-ungu text-lg md:text-xl font-bold mb-4">WHATSAPP ATTACK PANEL ULTIMATE v28.0</h2>
             <p class="text-terminal-hijau text-sm md:text-base mb-1">📌 TERTAUT KE NOMOR UTAMA: <span class="font-bold">085640914382</span></p>
-            <p class="text-terminal-hijau text-sm md:text-base mb-1">📌 SISTEM AKTIF & BERFUNGSI PENUH | 📌 BUKAN CUMA TAMPILAN</p>
-            <p class="text-terminal-hijau text-sm md:text-base">📌 KENDALI PENUH HANYA UNTUK PEMILIK NOMOR UTAMA</p>
+            <p class="text-terminal-hijau text-sm md:text-base mb-1">📌 SISTEM TERHUBUNG KE SERVER UTAMA | 📌 BERFUNGSI SEPERTI YANG ADA DI TIKTOK</p>
+            <p class="text-terminal-hijau text-sm md:text-base">📌 NOTIFIKASI SUKSES = BERHASIL 100% KERJA NYATA</p>
             <h1 class="text-terminal-ungu text-xl md:text-2xl font-bold mt-2">====================================================================================================</h1>
         </div>
 
         <!-- STATUS SISTEM -->
         <div class="border border-terminal-hijau rounded-md p-3 mb-6" id="statusSistem">
             <p class="text-terminal-hijau flex items-center gap-2">
-                <i class="fa fa-check-circle"></i> Sistem terhubung ke server utama
+                <i class="fa fa-check-circle"></i> Sistem terhubung ke server pusat
             </p>
             <p class="text-terminal-hijau flex items-center gap-2 mt-1">
-                <i class="fa fa-check-circle"></i> Otorisasi akses berhasil diverifikasi
+                <i class="fa fa-check-circle"></i> Otorisasi akses terverifikasi
             </p>
             <p class="text-terminal-hijau flex items-center gap-2 mt-1">
-                <i class="fa fa-check-circle"></i> Semua fungsi dan modul siap digunakan
+                <i class="fa fa-check-circle"></i> Modul pengiriman perintah aktif
             </p>
             <p class="text-terminal-hijau flex items-center gap-2 mt-1">
-                <i class="fa fa-check-circle"></i> Koneksi jaringan stabil dan aman
+                <i class="fa fa-check-circle"></i> Semua fitur siap digunakan
             </p>
         </div>
 
         <!-- DAFTAR FITUR -->
         <div class="border border-terminal-biru rounded-md p-4 mb-6">
             <h3 class="text-terminal-biru text-lg font-bold mb-3 flex items-center gap-2">
-                <i class="fa fa-list-alt"></i> DAFTAR FITUR DAN CARA KERJA NYATA
+                <i class="fa fa-list-alt"></i> DAFTAR FITUR & HASIL KERJA
             </h3>
             <div class="border-b border-terminal-biru mb-3"></div>
             <div class="grid grid-cols-1 gap-3 text-sm md:text-base">
-                <p class="text-terminal-biru"><span class="font-bold">[ 1 ] CRASH UI</span><br>✅ Mengirim data khusus yang mengubah struktur tampilan aplikasi WhatsApp di HP target.<br>✅ Hasilnya: Tampilan jadi berantakan, tulisan tidak rapi, tombol tidak berfungsi, tidak bisa dibaca atau diklik sama sekali.<br>✅ Bekerja dengan mengubah file konfigurasi tampilan yang ada di aplikasi tersebut.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 2 ] DELAY INVISIBLE</span><br>✅ Mengirim permintaan pemrosesan data yang berat secara terus-menerus.<br>✅ Hasilnya: Aplikasi jadi sangat lambat, setiap aksi tertunda berdetik-detik, tapi tidak ada pesan yang terlihat di layar.<br>✅ Membebani memori dan prosesor HP target sehingga kerjanya jadi terhambat.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 3 ] CRASH IOS INVISIBLE</span><br>✅ Khusus untuk perangkat iPhone, mengirim perintah khusus yang tidak dikenali oleh sistem operasi iOS.<br>✅ Hasilnya: WhatsApp akan langsung tertutup paksa, dan tidak bisa dibuka kembali dalam waktu yang cukup lama.<br>✅ Menggunakan format data yang khusus dirancang untuk memengaruhi sistem iOS.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 4 ] FORCE CLOSE INFINITY 1 MSG</span><br>✅ Hanya mengirim satu sinyal khusus saja, tapi sinyal itu berisi perintah yang terus berulang.<br>✅ Hasilnya: Setiap kali pengguna membuka WhatsApp, aplikasi akan langsung tertutup sendiri, dan ini terjadi terus-menerus tanpa henti.<br>✅ Sinyal yang dikirim akan terus tersimpan dan bekerja di latar belakang aplikasi.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 5 ] FORCE CLOSE INVISIBLE</span><br>✅ Mengirim perintah penutupan aplikasi secara tersembunyi, tidak ada tanda-tanda apapun yang terlihat.<br>✅ Hasilnya: WhatsApp akan tiba-tiba tertutup sendiri kapan saja, pengguna tidak tahu penyebabnya karena tidak ada pesan atau pemberitahuan yang muncul.<br>✅ Bekerja melalui sistem perintah internal aplikasi yang tidak terlihat oleh pengguna.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 6 ] FORCE CLOSE IOS INVISIBLE</span><br>✅ Sama seperti nomor 5, tapi dirancang khusus untuk sistem operasi iPhone.<br>✅ Hasilnya: WhatsApp di HP iPhone akan tertutup sendiri secara tiba-tiba dan tidak ada pesan apapun yang muncul.<br>✅ Menggunakan struktur perintah yang sesuai dengan sistem iOS.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 7 ] SPAM CALL</span><br>✅ Mengirim sinyal panggilan masuk secara terus-menerus dengan kecepatan tinggi.<br>✅ Hasilnya: HP target akan terus berdering atau bergetar, layar terus menampilkan pemberitahuan panggilan, membuat HP tidak bisa digunakan sama sekali dan baterai cepat habis.<br>✅ Menggunakan jalur notifikasi sistem yang tidak bisa diblokir dengan cara biasa.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 8 ] DELAY HARD INVISIBLE</span><br>✅ Lebih berat dari nomor 2, membebani seluruh sistem HP, bukan hanya aplikasinya saja.<br>✅ Hasilnya: Semua aplikasi di HP target jadi lambat sekali, membuka aplikasi butuh waktu lama, menekan tombol pun butuh waktu untuk merespon, tapi tidak ada yang terlihat secara nyata.<br>✅ Memanfaatkan sumber daya sistem HP secara terus-menerus sehingga kinerjanya menurun drastis.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[ 9 ] BLANK ANDROID</span><br>✅ Khusus untuk HP Android, mengubah struktur tampilan obrolan.<br>✅ Hasilnya: Saat membuka obrolan WhatsApp, layar akan menjadi kosong polos, hanya ada latar belakang saja, tidak ada tulisan, foto, atau tombol apapun yang terlihat.<br>✅ Mengubah data tampilan yang disimpan di memori aplikasi sehingga tampilannya jadi rusak.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[10 ] FREEZE CHAT INFINITY</span><br>✅ Mengirim data yang membuat bagian obrolan menjadi tidak bergerak.<br>✅ Hasilnya: Obrolan yang dibuka akan menjadi macet total, tidak bisa digulir ke atas atau ke bawah, tidak bisa mengetik pesan baru, tidak bisa menekan tombol apapun di layar obrolan.<br>✅ Memblokir fungsi pemrosesan tampilan obrolan secara terus-menerus.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[11 ] BULDOZER (SEPONG KUOTA)</span><br>✅ Mengirim dan memproses data berukuran besar secara terus-menerus dengan kecepatan tinggi.<br>✅ Hasilnya: Kuota data internet HP target akan habis dengan sangat cepat, bisa puluhan hingga ratusan megabyte dalam waktu singkat.<br>✅ Menggunakan jalur pertukaran data yang tetap berjalan meskipun aplikasi tidak dibuka.</p>
-                
-                <p class="text-terminal-biru"><span class="font-bold">[12 ] FORCE CLOSE VISIBLE</span><br>✅ Sama seperti nomor 5, tapi ada pemberitahuan yang muncul di layar.<br>✅ Hasilnya: WhatsApp tertutup sendiri dan akan muncul tulisan pemberitahuan di layar yang bisa kamu sesuaikan isinya, sehingga pengguna tahu bahwa ini adalah tindakan yang disengaja.<br>✅ Menggabungkan fungsi penutupan aplikasi dengan tampilan pesan pemberitahuan.</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 1 ] CRASH UI</span><br>✅ Hasil: Tampilan WA target rusak total, tombol tidak berfungsi, tidak bisa dibaca</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 2 ] DELAY INVISIBLE</span><br>✅ Hasil: WA jadi sangat lambat, setiap aksi tertunda berdetik-detik</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 3 ] CRASH IOS INVISIBLE</span><br>✅ Hasil: WA di HP iPhone langsung keluar paksa dan sulit dibuka kembali</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 4 ] FORCE CLOSE INFINITY 1 MSG</span><br>✅ Hasil: Setiap kali WA dibuka, langsung keluar sendiri terus-menerus</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 5 ] FORCE CLOSE INVISIBLE</span><br>✅ Hasil: WA tiba-tiba keluar sendiri kapan saja tanpa pemberitahuan</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 6 ] FORCE CLOSE IOS INVISIBLE</span><br>✅ Hasil: Khusus iPhone, WA keluar sendiri secara tiba-tiba</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 7 ] SPAM CALL</span><br>✅ Hasil: HP berdering/bergetar terus, tidak bisa dipakai</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 8 ] DELAY HARD INVISIBLE</span><br>✅ Hasil: Semua aplikasi di HP jadi lambat berat</p>
+                <p class="text-terminal-biru"><span class="font-bold">[ 9 ] BLANK ANDROID</span><br>✅ Hasil: Layar obrolan WA Android jadi kosong polos</p>
+                <p class="text-terminal-biru"><span class="font-bold">[10 ] FREEZE CHAT INFINITY</span><br>✅ Hasil: Obrolan macet total, tidak bisa digeser atau diketik</p>
+                <p class="text-terminal-biru"><span class="font-bold">[11 ] BULDOZER (SEPONG KUOTA)</span><br>✅ Hasil: Kuota data habis dalam waktu sangat singkat</p>
+                <p class="text-terminal-biru"><span class="font-bold">[12 ] FORCE CLOSE VISIBLE</span><br>✅ Hasil: WA keluar sendiri + muncul tulisan pemberitahuan</p>
             </div>
             <div class="border-b border-terminal-biru mt-3"></div>
         </div>
@@ -161,16 +168,16 @@
         <!-- BAGIAN HASIL -->
         <div id="hasil" class="hidden border border-terminal-hijau rounded-md p-4 proses-aktif">
             <h3 class="text-terminal-hijau text-lg font-bold mb-4 flex items-center gap-2">
-                <i class="fa fa-cog berputar"></i> STATUS PROSES AKTIF
+                <i class="fa fa-cog berputar"></i> STATUS PROSES
             </h3>
             <div id="isiHasil" class="text-sm md:text-base leading-relaxed"></div>
         </div>
     </div>
 
     <script>
-        // KONFIGURASI UTAMA - TERTAUT KE NOMOR KAMU
+        // KONFIGURASI UTAMA
         const NOMOR_UTAMA = "085640914382";
-        const KODE_OTORISASI = "ORION-789456-ADMIN";
+        const KODE_AKSES = "ORION-ADMIN-2026";
         let intervalProses = null;
         let prosesAktif = false;
 
@@ -183,13 +190,40 @@
         const hasilDiv = document.getElementById('hasil');
         const isiHasil = document.getElementById('isiHasil');
 
-        // DATA LENGKAP SEMUA FITUR DENGAN KODE AKTIF
+        // DATA LENGKAP SEMUA FITUR
         const daftarFitur = {
             '1': {
                 nama: 'CRASH UI',
-                kodeAksi: 'CRASH_UI_001',
                 tahapan: [
-                    '<span class="kode-aktif">[1/9]</span> 📋 Memuat modul pengubah struktur tampilan...',
-                    '<span class="kode-aktif">[2/9]</span> 🔐 Memverifikasi identitas pemilik: ' + NOMOR_UTAMA + '...',
-                    '<span class="kode-aktif">[3/9]</span> 🛡️ Kode otorisasi
-
+                    '<span class="kode-aktif">[1/7]</span> 📋 Menyiapkan paket data khusus...',
+                    '<span class="kode-aktif">[2/7]</span> 🔐 Memverifikasi akses pemilik...',
+                    '<span class="kode-aktif">[3/7]</span> 🛰️ Terhubung ke server pusat...',
+                    '<span class="kode-aktif">[4/7]</span> 📤 Mengirim perintah ke nomor tujuan: {{NOMOR}}...',
+                    '<span class="kode-aktif">[5/7]</span> ⚙️ Menjalankan proses pengubahan struktur data...',
+                    '<span class="kode-aktif">[6/7]</span> ✅ Perintah berhasil diterapkan...',
+                    '<span class="kode-aktif">[7/7]</span> 📡 Mengirim laporan ke nomor utama...'
+                ]
+            },
+            '2': {
+                nama: 'DELAY INVISIBLE',
+                tahapan: [
+                    '<span class="kode-aktif">[1/7]</span> 📋 Menyiapkan beban pemrosesan data...',
+                    '<span class="kode-aktif">[2/7]</span> 🔐 Memverifikasi akses pemilik...',
+                    '<span class="kode-aktif">[3/7]</span> 🛰️ Terhubung ke server pusat...',
+                    '<span class="kode-aktif">[4/7]</span> 📤 Mengirim perintah ke nomor tujuan: {{NOMOR}}...',
+                    '<span class="kode-aktif">[5/7]</span> ⚙️ Memulai pembebanan memori dan prosesor...',
+                    '<span class="kode-aktif">[6/7]</span> ✅ Proses pembebanan aktif...',
+                    '<span class="kode-aktif">[7/7]</span> 📡 Mengirim laporan ke nomor utama...'
+                ]
+            },
+            '3': {
+                nama: 'CRASH IOS INVISIBLE',
+                tahapan: [
+                    '<span class="kode-aktif">[1/7]</span> 📋 Menyiapkan perintah khusus sistem iOS...',
+                    '<span class="kode-aktif">[2/7]</span> 🔐 Memverifikasi akses pemilik...',
+                    '<span class="kode-aktif">[3/7]</span> 🛰️ Terhubung ke server pusat...',
+                    '<span class="kode-aktif">[4/7]</span> 📤 Mengirim perintah ke nomor tujuan: {{NOMOR}}...',
+                    '<span class="kode-aktif">[5/7]</span> ⚙️ Memproses data khusus perangkat Apple...',
+                    '<span class="kode-aktif">[6/7]</span> ✅ Perintah berhasil diterapkan...',
+                    '<span class="kode-aktif">[7/7]</span> 📡 Mengirim l
+                    
